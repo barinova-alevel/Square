@@ -1,0 +1,38 @@
+﻿@using SquarerLogic.Models
+@model Input
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Decision</h2>
+@using (Html.BeginForm("Index", "Decision"))
+{
+    //@Html.TextBoxFor(x=> x.A)
+    <table>
+        <tr>
+            <td>A:</td>
+            <td>@Html.TextBoxFor(x => x.A)</td>
+        </tr>
+        <tr>
+            <td>B:</td>
+            <td>@Html.TextBoxFor(x => x.B)</td>
+        </tr>
+        <tr>
+            <td>C:</td>
+            <td>@Html.TextBoxFor(x => x.C)</td>
+        </tr>
+    </table>
+    <br />
+    <input type="submit" value="Calculate" />
+}
+@if (Model != null && Model.x != null)
+{
+    foreach (var x in Model.x)
+    {
+        <p>@x</p>
+    }
+}
+@Html.DisplayTextFor(s => s.A)* x+ @Html.DisplayTextFor(s => s.B)x + @Html.DisplayTextFor(s=>s.C)=0
+@*<input type="text" name="A" />x* x+
+    <input type="text" name="B" />x +
+    <input type="text" name="C" />= 0*@
